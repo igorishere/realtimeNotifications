@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<script>
+    const events = new EventSource('http://localhost:3000/events');
+
+    events.addEventListener('notiticacao',(data)=>{
+        document.getElementById('messagebox').innerHTML = JSON.stringify(data.data);
+   
+    })
+</script>
+<body>
+    <div id="messagebox">
+    </div>
+</body>
+</html>
